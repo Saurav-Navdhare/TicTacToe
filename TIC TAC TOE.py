@@ -22,9 +22,8 @@ while(True):
             j='X'
         else:
             j='O'
-        print(L[0])
-        print(L[1])
-        print(L[2])
+        for I in L:
+            print(I)
         k=0
         while(k==0):
             a=input('Enter the Number of Row :-> ')
@@ -38,24 +37,21 @@ while(True):
                         k=1
                     else:
                         print('Space occupied by ',L[a][b],' Try again')
-                        continue
                 else:
                     print('Enter the Number of Column Correctly')
             else:
                 print('Enter the Number of row correctly')
         if(win(L)=='a'):
             print(j, 'won')
-            print(L[0])
-            print(L[1])
-            print(L[2])
+            for I in L:
+                print(I)
             p=int(input('Enter 1 to playagain'))
             if(p!=1):
                 break
         elif(not(win(L)=='a')and i==8):
             print('Match Tied')
-            print(L[0])
-            print(L[1])
-            print(L[2])
+            for I in L:
+                print(I)
             p=int(input('Enter 1 to playagain'))
             if(p!=1):
                 break
