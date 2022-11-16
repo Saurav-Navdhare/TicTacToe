@@ -14,7 +14,7 @@ def win(L):
         return 'a'
     else:
         return 'b'
-
+flag = 1
 while(True):
     L=[[' ',' ',' '],[' ',' ',' '],[' ',' ',' ']]
     for i in range(9):
@@ -45,14 +45,23 @@ while(True):
             print(j, 'won')
             for I in L:
                 print(I)
-            p=int(input('Enter 1 to playagain'))
+            p=int(input('Enter 0 to exit \n Enter 1 to Playagain'))
             if(p!=1):
+                flag=0
                 break
-        elif(not(win(L)=='a')and i==8):
+            else:
+                L = [[' ', ' ', ' '], [' ', ' ', ' '], [' ', ' ', ' ']]
+                continue
+        elif(not(win(L)=='a') and i==8):
             print('Match Tied')
             for I in L:
                 print(I)
-            p=int(input('Enter 1 to playagain'))
+            p=int(input('Enter 0 to exit \n Enter 1 to Playagain'))
             if(p!=1):
+                flag=0
                 break
-            
+            else:
+                L = [[' ', ' ', ' '], [' ', ' ', ' '], [' ', ' ', ' ']]
+                continue
+    if(flag==0):
+        break
